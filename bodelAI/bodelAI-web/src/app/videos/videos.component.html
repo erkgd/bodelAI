@@ -1,0 +1,6 @@
+<div *ngIf="videos">
+    <div *ngFor="let item of videos">
+        <!--<video *ngIf="videoSrc" [src]="videoSrc" controls></video>-->
+        <p>{{item.filename}}</p>
+    </div>
+</div>
