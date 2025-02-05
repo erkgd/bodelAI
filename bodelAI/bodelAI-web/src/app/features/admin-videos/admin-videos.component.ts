@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DownloadVideosService } from '../services/download-videos.service';
+import { DownloadVideosService } from '../../services/download-videos.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './videos.component.html',
   styleUrl: './videos.component.scss'
 })
-export class VideosComponent {
+export class AdminVideosComponent {
   
   videos: any[] = [];
 

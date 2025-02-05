@@ -1,13 +1,15 @@
 <div class="video-container">
   <h1>Welcome to BodelAI</h1>
   <p *ngIf="!videoSrc && !errorMessage && !timeoutError && !isLoading">Drag and drop a video here.</p>
-  <div class="drop-zone" *ngIf="!videoSrc && !errorMessage && !timeoutError && !isLoading" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
-    <p>Drag your video here</p>
-  </div>
+
+  <app-drag-and-drop (fileDropped)="onFileDropped($event)" *ngIf="!videoSrc && !errorMessage && !timeoutError && !isLoading"></app-drag-and-drop>
+
   <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
   <div *ngIf="timeoutError" class="timeout-error">
     <p>Server timeout. Please try again later.</p>
   </div>
+  
   <div *ngIf="isLoading" class="loading">
     <img src="/src/assets/gif/loading.gif" alt="Loading...">
   </div>
